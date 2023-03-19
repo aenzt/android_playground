@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MrHead</string>
+    <string name="register_now">Don\'t have an account? <font color='#FD8C00'><u>Register Now</u></font></string>
+    <string name="TOS">By signing up, you are agree with our <font color='#FD8C00'><u>Terms &amp; Conditions</u></font></string>
+    <string-array name="dropdown_item">
+        <item>Rumah</item>
+        <item>Kost</item>
+        <item>Apartemen</item>
+        <item>Lainnya</item>
+    </string-array>
+</resources>
