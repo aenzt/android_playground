@@ -1,11 +1,14 @@
 package com.example.mrhead
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -13,6 +16,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton:Button
     private lateinit var emailInput:EditText
     private lateinit var passwordInput:EditText
+
+    private lateinit var regEmail: String
+    private lateinit var regPasssword: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                if (email == "raihanpl@student.ub.ac.id" && password == "215150707111027") {
+                if (email == regEmail && password == regPasssword) {
                     emailInput.text.clear()
                     passwordInput.text.clear()
                     Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
@@ -50,6 +56,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun registerIntent(view:View){
-        startActivity(Intent(this@LoginActivity, Register::class.java))
+        val intent = Intent(this, Register::class.java)
+        resultLauncher.launch(intent)
+    }
+
+    private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data: Intent? = result.data
+            regEmail = data?.getStringExtra("email").toString()
+            regPasssword = data?.getStringExtra("password").toString()
+        }
     }
 }
