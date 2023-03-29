@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.putExtra("email_key", email)
+                    intent.putExtra("password_key", password)
                     startActivity(intent)
                 } else {
                     passwordInput.text.clear()

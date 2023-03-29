@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <TextView
@@ -19,14 +20,27 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
+    <TextView
+        android:id="@+id/welcome_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/welcome_email"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        />
+
     <RelativeLayout
         android:id="@+id/potato_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome_email">
+        app:layout_constraintTop_toBottomOf="@id/welcome_password">
 
         <ImageView
             android:id="@+id/body"
@@ -106,6 +120,7 @@
         android:scaleX="1.2"
         android:scaleY="1.2"
         android:text="Rambut"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -119,6 +134,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="44dp"
         android:text="Alis"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:scaleX="1.2"
         android:scaleY="1.2"
@@ -129,10 +145,10 @@
         android:id="@+id/moustache_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="64dp"
         android:layout_marginTop="32dp"
         android:text="Kumis"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:scaleX="1.2"
         android:scaleY="1.2"
@@ -145,6 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:text="Janggut"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:scaleX="1.2"
         android:scaleY="1.2"

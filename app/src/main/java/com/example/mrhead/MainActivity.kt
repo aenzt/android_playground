@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     private lateinit var welcomeText:TextView
+    private lateinit var welcomeText2:TextView
 
     private lateinit var moustacheCheck: CheckBox
     private lateinit var beardCheck:CheckBox
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         welcomeText = findViewById(R.id.welcome_email)
+        welcomeText2 = findViewById(R.id.welcome_password)
 
         moustacheCheck = findViewById(R.id.moustache_checkbox)
         beardCheck = findViewById(R.id.beard_checkbox)
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         val intent = intent
         welcomeText.text = "Welcome, " + intent.getStringExtra("email_key")
+        welcomeText2.text = intent.getStringExtra("password_key")
 
         moustacheCheck.setOnClickListener {
             if (moustacheCheck.isChecked) {
